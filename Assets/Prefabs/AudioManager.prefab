@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3436143537797167839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3436143537797167833}
+  - component: {fileID: 3436143537797167832}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3436143537797167833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3436143537797167839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.337168, y: 16.273987, z: -14.960034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3436143537797167832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3436143537797167839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a699cb970fb6f634ea3b8260c9595458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Explosion
+    Clip: {fileID: 8300000, guid: afdfd32f7d1db054283a6777c04293c5, type: 3}
+    Volume: 1
+    Pitch: 1.32
+    SpacialBlend: 0.85
+    AudioSource: {fileID: 0}
+  - Name: Sword Swing
+    Clip: {fileID: 8300000, guid: 12b1b5c40c133794694b7576e6139b55, type: 3}
+    Volume: 0.78
+    Pitch: 1.1
+    SpacialBlend: 0
+    AudioSource: {fileID: 0}
+  - Name: Sword Spin
+    Clip: {fileID: 8300000, guid: 933ba334db85815488f5f575d795956c, type: 3}
+    Volume: 1
+    Pitch: 1.34
+    SpacialBlend: 0.81
+    AudioSource: {fileID: 0}
+  - Name: Sword Hit
+    Clip: {fileID: 8300000, guid: 05e57454cb7c7cc4abc56700ee58cd3f, type: 3}
+    Volume: 1
+    Pitch: 1
+    SpacialBlend: 0.82
+    AudioSource: {fileID: 0}
+  - Name: Jedi Push
+    Clip: {fileID: 8300000, guid: 9c08baecbea23714babb339b54cd4f7d, type: 3}
+    Volume: 0.87
+    Pitch: 1.25
+    SpacialBlend: 0.76
+    AudioSource: {fileID: 0}
+  - Name: Jedi Pull
+    Clip: {fileID: 8300000, guid: db5338cac2e60ff419bb65297cdaaeb5, type: 3}
+    Volume: 0.87
+    Pitch: 1.31
+    SpacialBlend: 0.78
+    AudioSource: {fileID: 0}
+  - Name: Laser Hum
+    Clip: {fileID: 8300000, guid: c5dafc74781fb3043a702d7aa38d9150, type: 3}
+    Volume: 0.6
+    Pitch: 1
+    SpacialBlend: 1
+    AudioSource: {fileID: 0}
+  - Name: Laser Shot
+    Clip: {fileID: 8300000, guid: 01f8534290f9d2a4faaeb236ab216369, type: 3}
+    Volume: 0.6
+    Pitch: 1
+    SpacialBlend: 0.7
+    AudioSource: {fileID: 0}
+  - Name: Bleep
+    Clip: {fileID: 8300000, guid: 7a51f1f224e81a24fa65a26c1c8de0d9, type: 3}
+    Volume: 1
+    Pitch: 1
+    SpacialBlend: 1
+    AudioSource: {fileID: 0}
+  - Name: Metal
+    Clip: {fileID: 8300000, guid: 897f3d5a2b9aa0540a545b80c4b75d1e, type: 3}
+    Volume: 1
+    Pitch: 1
+    SpacialBlend: 1
+    AudioSource: {fileID: 0}
