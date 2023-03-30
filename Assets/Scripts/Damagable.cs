@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Damagable : MonoBehaviour
 {
     public float MaxHealth = 100;
+    public Image HealthBar;
+    public Image DamageBar;
     public bool CameraShake = false;
     public bool CharacterShake = false;
     public bool ScaleShake = false;
@@ -20,6 +23,12 @@ public class Damagable : MonoBehaviour
     public void Damage(float damage)
     {
         _health -= damage;
+
+        if (HealthBar != null)
+            HealthBar.DOFillAmount(_health / MaxHealth, 0.2f);
+
+        if (DamageBar != null)
+            DamageBar.DOFillAmount(_health / MaxHealth, 0.3f).SetDelay(0.2f);
 
         if (_health <= 0)
             return;

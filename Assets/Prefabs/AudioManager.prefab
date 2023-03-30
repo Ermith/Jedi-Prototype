@@ -43,6 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a699cb970fb6f634ea3b8260c9595458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Music:
+    Name: Atmosphere
+    Clip: {fileID: 8300000, guid: 84df86a79a753514b8554bc88091d007, type: 3}
+    Volume: 0.473
+    Pitch: 1
+    SpacialBlend: 0
+    AudioSource: {fileID: 0}
   Sounds:
   - Name: Explosion
     Clip: {fileID: 8300000, guid: afdfd32f7d1db054283a6777c04293c5, type: 3}

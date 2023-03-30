@@ -11,7 +11,6 @@ public class ControlButton : MonoBehaviour
     public InputActionReference actionReference;
     public int BindingIndex = 0;
     private TMP_Text _label;
-    private bool _pressed = false;
     private UIButton _button;
 
     // Start is called before the first frame update

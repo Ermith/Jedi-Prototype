@@ -2,10 +2,10 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class AudioManager : MonoBehaviour
 {
+    public Sound Music;
     public Sound[] Sounds;
     private void Awake()
     {
@@ -19,6 +19,16 @@ public class AudioManager : MonoBehaviour
             s.AudioSource.spatialBlend = s.SpacialBlend;
             s.AudioSource.dopplerLevel = 0;
         }
+
+        Music.AudioSource = gameObject.AddComponent<AudioSource>();
+        Music.AudioSource.clip = Music.Clip;
+        Music.AudioSource.volume = Music.Volume;
+        Music.AudioSource.pitch = Music.Pitch;
+        Music.AudioSource.spatialBlend = Music.SpacialBlend;
+        Music.AudioSource.dopplerLevel = 0;
+
+        Music.AudioSource.loop = true;
+        Music.AudioSource.Play();
     }
 
     public AudioSource PlayOnTarget(string name, GameObject target, bool loop = false)

@@ -12,7 +12,8 @@ public class ControlText : MonoBehaviour
     {
         var action = FindObjectOfType<JediCharacter>().GetComponent<PlayerInput>().currentActionMap.FindAction(Name);
         var binding = action.bindings[0];
-        string control = binding.path.Substring(binding.path.LastIndexOf('/') + 1);
+        string control = InputControlPath.ToHumanReadableString(binding.path,
+            InputControlPath.HumanReadableStringOptions.OmitDevice); 
         GetComponent<TMP_Text>().text += $"\n[{control}]";
         Debug.Log(control);
 

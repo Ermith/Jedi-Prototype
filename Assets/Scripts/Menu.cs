@@ -16,8 +16,8 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("TutorialLevel");
         DOTween.Clear();
+        SceneManager.LoadScene("TutorialLevel");
     }
 
     public void Quit()
@@ -37,9 +37,9 @@ public class Menu : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
-        DOTween.KillAll();
         DOTween.Clear();
+        SceneManager.LoadScene("MainMenu");
+        //DOTween.KillAll();
     }
 
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class JediCharacter : MonoBehaviour
 {
@@ -32,9 +33,18 @@ public class JediCharacter : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();
+        float correctHeight = _controller.center.y + _controller.skinWidth;
+        // set the controller center vector:
+        _controller.center = new Vector3(0, correctHeight, 0);
+
         _animator = GetComponent<Animator>();
         _weapon = GetComponentInChildren<Weapon>();
         _audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     void FixedUpdate()
