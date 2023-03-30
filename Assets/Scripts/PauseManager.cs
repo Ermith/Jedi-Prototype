@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     public Canvas PauseScreen;
     public GameObject Menu;
     public GameObject OptionsMenu;
+    public GameObject Credits;
     public PlayerInput CharacterInput;
     private bool _isPaused = false;
     private List<Tween> _pausedTweens;
@@ -32,6 +33,7 @@ public class PauseManager : MonoBehaviour
 
         if (!_isPaused)
         {
+            Credits.SetActive(false);
             OptionsMenu.SetActive(false);
             Menu.SetActive(true);
         }

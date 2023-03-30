@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject == from || other.gameObject.layer == 2)
             return;
 
-        other.GetComponent<Damagable>()?.Damage(Damage);
+        other.GetComponent<Damagable>()?.TakeDamage(Damage);
         var particleRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
         Vector3 pointOfImpact = other.ClosestPoint(transform.position);
         Instantiate(ParticleSystem, pointOfImpact, particleRotation).Play();

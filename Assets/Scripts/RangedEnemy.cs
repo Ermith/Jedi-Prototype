@@ -8,7 +8,7 @@ public class RangedEnemy : MonoBehaviour
 {
     public GameObject _projectile;
     public GameObject _muzzle;
-    public Transform _target;
+    public CharacterController _target;
     public float ReloadTime = 2f;
     public float ChargeTime = 500f;
     public float ProjectileSpeed = 10f;
@@ -22,6 +22,7 @@ public class RangedEnemy : MonoBehaviour
     private Animator _animator;
     private AudioManager _audioManager;
     private AudioSource _chargingAudio;
+    private Damagable _damagable;
     private enum State { Reloading, Idle, Charging }
     private State _state = State.Idle;
 
@@ -30,12 +31,13 @@ public class RangedEnemy : MonoBehaviour
     {
         _projectileColor = _projectile.GetComponent<MeshRenderer>().material.GetColor("_EmissionColor");
         _animator = GetComponent<Animator>();
+        _damagable = GetComponent<Damagable>();
         _audioManager = FindObjectOfType<AudioManager>();
 
         _muzzleMaterial = _muzzle.GetComponent<MeshRenderer>().material;
         _muzzleMaterial.SetColor("_EmissionColor", Color.black);
         _muzzleMaterial.color = Color.black;
-        _target = FindObjectOfType<JediCharacter>().transform;
+        _target = FindObjectOfType<JediCharacter>().GetComponent<CharacterController>();
         _stopWatch = new Stopwatch();
         _state = State.Idle;
     }
@@ -43,11 +45,13 @@ public class RangedEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool inRange = (_target.position - transform.position).magnitude <= Range;
+        bool inRange = (_target.center + _target.transform.position - transform.position).magnitude <= Range;
         _animator.SetBool("IsActive", inRange);
 
         if (!inRange)
             return;
+
+        _damagable.HealthBarActive = true;
 
         if (_state == State.Idle)
         {
@@ -84,9 +88,8 @@ public class RangedEnemy : MonoBehaviour
                 });
         }
 
-        Vector3 targetDir = (_target.position - transform.position).normalized;
+        Vector3 targetDir = (_target.center + _target.transform.position - transform.position).normalized;
         Vector3 forward = Vector3.Lerp(transform.forward, targetDir, TurnRate);
-        forward.y = 0;
         transform.forward = forward;
     }
 

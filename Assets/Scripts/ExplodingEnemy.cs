@@ -28,7 +28,7 @@ public class ExplodingEnemy : MonoBehaviour
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, ExplosionRadius);
         foreach (Collider collider in colliders)
-            collider.GetComponent<Damagable>()?.Damage(ExplosionDamage);
+            collider.GetComponent<Damagable>()?.TakeDamage(ExplosionDamage);
 
         //_audioSource.Play();
         //_audioManager.Play("Explosion", source: _audioSource);

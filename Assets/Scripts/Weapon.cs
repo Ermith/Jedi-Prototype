@@ -162,7 +162,7 @@ public class Weapon : MonoBehaviour
 
         Vector3 pointOfImpact = other.ClosestPoint(transform.position);
 
-        other.gameObject.GetComponent<Damagable>().Damage(Damage);
+        other.gameObject.GetComponent<Damagable>().TakeDamage(Damage);
         var particleSystem = Instantiate(Sparks);
         particleSystem.transform.position = pointOfImpact;
         particleSystem.transform.up = Vector3.Lerp(-transform.up, Vector3.up, 0.5f);

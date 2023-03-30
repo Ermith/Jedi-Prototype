@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
+    public Transform Victory;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player")
             return;
-        Cursor.visible = true;
-        SceneManager.LoadScene("MainMenu");
+
+        var cc = other.gameObject.GetComponent<CharacterController>();
+        cc.enabled = false;
+        other.transform.position = Victory.position;
+        cc.enabled = true;
+        //Cursor.visible = true;
+        //SceneManager.LoadScene("MainMenu");
     }
 }
