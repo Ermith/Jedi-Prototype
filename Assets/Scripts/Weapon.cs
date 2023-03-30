@@ -169,12 +169,4 @@ public class Weapon : MonoBehaviour
         particleSystem.Play();
         _audioManager.Play("Sword Hit", position: pointOfImpact);
     }
-
-    private void OnGUI()
-    {
-        GUILayout.BeginVertical();
-        //GUILayout.Button("I am an Automatic Layout Button");
-        GUILayout.Label("WAHAAAAAAAT");
-        GUILayout.EndVertical();
-    }
 }

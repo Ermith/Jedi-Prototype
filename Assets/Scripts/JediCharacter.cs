@@ -194,7 +194,7 @@ public class JediCharacter : MonoBehaviour
         _canMove = false;
         _dashVelocity = transform.forward * DashStrength;
         _animator.SetBool("Dash", true);
-        _audioManager.Play("Jedi Push");
+        _audioManager.PlayOnTarget("Jedi Push", gameObject);
         DOTween.To(() => _dashVelocity, (Vector3 vel) => _dashVelocity = vel, Vector3.zero, 0.5f)
             .SetEase(Ease.Linear)
             .OnComplete(() =>

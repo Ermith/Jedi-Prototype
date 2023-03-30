@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
-    public Canvas PauseMenu;
+    public Canvas PauseScreen;
+    public GameObject Menu;
+    public GameObject OptionsMenu;
     public PlayerInput CharacterInput;
     private bool _isPaused = false;
     private List<Tween> _pausedTweens;
@@ -15,7 +17,7 @@ public class PauseManager : MonoBehaviour
     {
         _isPaused = false;
         Cursor.visible = _isPaused;
-        PauseMenu.gameObject.SetActive(_isPaused);
+        PauseScreen.gameObject.SetActive(_isPaused);
         CharacterInput.enabled = !_isPaused;
         Time.timeScale = 1.0f;
     }
@@ -24,8 +26,14 @@ public class PauseManager : MonoBehaviour
     {
         _isPaused = !_isPaused;
         Cursor.visible = _isPaused;
-        PauseMenu.gameObject.SetActive(_isPaused);
+        PauseScreen.gameObject.SetActive(_isPaused);
         CharacterInput.enabled = !_isPaused;
         Time.timeScale = (_isPaused) ? 0 : 1;
+
+        if (!_isPaused)
+        {
+            OptionsMenu.SetActive(false);
+            Menu.SetActive(true);
+        }
     }
 }
