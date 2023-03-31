@@ -757,13 +757,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 200
-  HealthBar: {fileID: 0}
-  DamageBar: {fileID: 0}
   CameraShake: 1
   CharacterShake: 0
   ScaleShake: 0
   Sound: 0
   SoundName: 
+  HealthBar: {fileID: 0}
   Camera: {fileID: 0}
 --- !u!1 &3087681247969317900
 GameObject:

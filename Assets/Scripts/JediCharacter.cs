@@ -14,6 +14,7 @@ public class JediCharacter : MonoBehaviour
     public float WeaponThrowRotationSpeed = 1500;
     public float WeaponRecallDuration = 0.2f;
     public float DashStrength = 2f;
+    public float DashCooldown = 1.5f;
 
     [HideInInspector]
     public float CameraRotation;
@@ -22,6 +23,7 @@ public class JediCharacter : MonoBehaviour
     private Animator _animator;
     private Weapon _weapon;
     private AudioManager _audioManager;
+    private float _dashCooldown;
 
     private bool _canMove = true;
     private Vector2 _movementInput;
@@ -40,11 +42,19 @@ public class JediCharacter : MonoBehaviour
         _animator = GetComponent<Animator>();
         _weapon = GetComponentInChildren<Weapon>();
         _audioManager = FindObjectOfType<AudioManager>();
+        _dashCooldown = DashCooldown;
     }
 
     private void OnDestroy()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void Update()
+    {
+        _dashCooldown -= Time.deltaTime;
+        if (_dashCooldown < 0)
+            _dashCooldown = -1;
     }
 
     void FixedUpdate()
@@ -186,11 +196,19 @@ public class JediCharacter : MonoBehaviour
 
     private void OnLook(InputValue val)
     {
-        CameraRotation += val.Get<float>() * RotationSpeed; // * Time.deltaTime * 1000;
+        CameraRotation += val.Get<float>() * RotationSpeed * Settings.MouseSensitivity; // * Time.deltaTime * 1000;
     }
 
     public void OnDash(InputValue val)
     {
+        if (!_canMove)
+            return;
+
+        if (_dashCooldown > 0)
+            return;
+
+        _dashCooldown = DashCooldown;
+
         _canMove = false;
         _dashVelocity = transform.forward * DashStrength;
         _animator.SetBool("Dash", true);

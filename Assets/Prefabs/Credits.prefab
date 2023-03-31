@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sounds and Music: ZapSplat.com, freesounds.org
+  m_text: 'Sounds and Music: ZapSplat.com, freesound.org
 
     Texture: Yughues Free
     Sand Materials (Unity store)'

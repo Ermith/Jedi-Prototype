@@ -52,7 +52,7 @@ public class JediInteractable : MonoBehaviour
 
         if (_characterController != null)
         {
-            _characterController.SimpleMove(_pushForce * Time.deltaTime * 1.3f);
+            _characterController.SimpleMove(_pushForce * Time.deltaTime * 2.1f);
             //_pushForce = Vector3.zero;
         }
     }

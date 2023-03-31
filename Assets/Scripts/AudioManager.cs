@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
         Music.AudioSource = gameObject.AddComponent<AudioSource>();
         Music.AudioSource.clip = Music.Clip;
-        Music.AudioSource.volume = Music.Volume;
+        Music.AudioSource.volume = Music.Volume * Settings.MusicVolume;
         Music.AudioSource.pitch = Music.Pitch;
         Music.AudioSource.spatialBlend = Music.SpacialBlend;
         Music.AudioSource.dopplerLevel = 0;
