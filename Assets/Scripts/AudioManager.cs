@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField, Tooltip("Music plays on a loop throught the game.")]
     public Sound Music;
+
+    [SerializeField, Tooltip("Sounds can be called by their name in scripts.")]
     public Sound[] Sounds;
     private void Awake()
     {

@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 
 public class ControlText : MonoBehaviour
 {
+    [SerializeField, Tooltip("Similar to ControlButton.")]
     public string Name = "Move";
+
     // Start is called before the first frame update
     void Start()
     {

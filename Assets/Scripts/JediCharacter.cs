@@ -7,13 +7,28 @@ using UnityEngine.SceneManagement;
 
 public class JediCharacter : MonoBehaviour
 {
+    [SerializeField, Tooltip("Movement speed.")]
     public float Speed = 3;
+
+    [SerializeField, Tooltip("Rotation when character moves around.")]
     public float RotationSpeed = 0.5f;
+
+    [SerializeField, Tooltip("How far do the enemies move get moved on Push and Pull?")]
     public float JediPushStrength = 100;
+
+    [SerializeField, Tooltip("How fast the lightsaber travels forward on thorw.")]
     public float WeaponThrowSpeed = 10;
+
+    [SerializeField, Tooltip("How fast does the lightsaber rotate while traveling forward on throw.")]
     public float WeaponThrowRotationSpeed = 1500;
+
+    [SerializeField, Tooltip("How long does it take for the lightsaber to return after throwing from any distance.")]
     public float WeaponRecallDuration = 0.2f;
+
+    [SerializeField, Tooltip("How fast and how far does jedi dash")]
     public float DashStrength = 2f;
+
+    [SerializeField, Tooltip("Minimal duration between dashes.")]
     public float DashCooldown = 1.5f;
 
     [HideInInspector]

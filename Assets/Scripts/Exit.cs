@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
+    [SerializeField, Tooltip("Teleports player to this location.")]
     public Transform Victory;
     private void OnTriggerEnter(Collider other)
     {

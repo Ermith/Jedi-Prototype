@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField, Tooltip("Jedi to be followed by the camera.")]
     public JediCharacter Target;
+
+    [SerializeField, Tooltip("How long is the selfie stick. Negative numbers to be behind the character.")]
     public float Offset;
-    public float RotationSpeed = 1;
 
     private float _currentRotation;
 

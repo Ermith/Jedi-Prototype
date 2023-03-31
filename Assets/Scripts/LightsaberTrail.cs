@@ -27,13 +27,13 @@ public class LightsaberTrail : MonoBehaviour
     private const int NUM_VERTICES = 4;
     private const int NUM_TRIANGLES_INDICES = 12;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Big width means longer weapon.")]
     public float Width;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Mostly for performance. Every FixedUpdate movement, new segment is created and the trail extends to that segment.")]
     private int _maxSegments = 2;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Restricts segments to be of maximum cumulative length. So lower FPS does not cause HUGE trails.")]
     private float _maxTrailLength;
 
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
+    [SerializeField, Tooltip("On button press, activates smart objects. What is executed depends on the smart objects. (They are smart)")]
     public List<SmartObject> Targets;
     // Start is called before the first frame update
     void Start()

@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Vector3 Velocity;
+    [SerializeField, Tooltip("Layer to hit.")]
     public int TargetLayer;
-    public float Damage;
+
+    [SerializeField, Tooltip("How long before get's destroyed on it's own.")]
     public float LifeTime = 100000f;
-    public GameObject from;
+
+    [SerializeField, Tooltip("Visual on hitting something.")]
     public ParticleSystem ParticleSystem;
+
+    [HideInInspector] public float Damage;
+    [HideInInspector] public GameObject from;
+    [HideInInspector] public Vector3 Velocity;
+
     private Stopwatch _stopwatch;
     private Rigidbody _rigidbody;
 
@@ -24,8 +31,6 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //_rigidbody.velocity = Velocity;
-        //_rigidbody.position += Velocity * Time.deltaTime / 10;
         transform.position += Velocity * Time.deltaTime;
         if (_stopwatch.ElapsedMilliseconds > LifeTime)
             Destroy(gameObject);

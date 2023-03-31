@@ -7,10 +7,16 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float Damage = 50;
-    public bool Active => _state != State.Idle;
+    [HideInInspector] public float Damage = 50;
+    [HideInInspector] public bool Active => _state != State.Idle;
+
+    [SerializeField, Tooltip("Where does the weapon return upon recall?")]
     public Transform RecallPoint;
+
+    [SerializeField, Tooltip("Sound to be played on attacking.")]
     public AudioClip SwordSwing;
+
+    [SerializeField, Tooltip("Visual on hitting a target.")]
     public ParticleSystem Sparks;
 
     enum State { Throwing, Recalling, Idle };

@@ -5,7 +5,10 @@ using DG.Tweening;
 
 public class JediInteractable : MonoBehaviour
 {
+    [SerializeField, Tooltip("Snaps to go on either X or Z axis. No diagonal movement.")]
     public bool SnapDirection = false;
+
+    [SerializeField, Tooltip("Controller to be moved. If there is no rigidbody present.")]
     public CharacterController Controller = null;
 
     private Rigidbody _rigidBody;

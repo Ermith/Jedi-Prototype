@@ -6,22 +6,38 @@ using UnityEngine.UI;
 
 public class Damagable : MonoBehaviour
 {
+    [SerializeField, Tooltip("Self explanatory")]
     public float MaxHealth = 100;
+
+    [SerializeField, Tooltip("Shake camera on getting hit.")]
     public bool CameraShake = false;
+
+    [SerializeField, Tooltip("Camera to be shaken")] 
+    public Camera Camera;
+
+    [SerializeField, Tooltip("Shake character on getting hit.")]
     public bool CharacterShake = false;
+
+    [SerializeField, Tooltip("Shake scale of the character on getting hit.")]
     public bool ScaleShake = false;
+
+    [SerializeField, Tooltip("Play sound on getting hit.")]
     public bool Sound = false;
+
+    [SerializeField, Tooltip("See sound manager for sounds available")]
     public string SoundName = "";
+
+    [SerializeField, Tooltip("Visual for showing the health.")]
+    private HealthBar HealthBar;
+
+    [HideInInspector]
     public bool HealthBarActive
     {
         get => HealthBar == null ? false : HealthBar.gameObject.activeSelf;
         set { if (this.HealthBar != null) HealthBar.gameObject.SetActive(value); }
     }
 
-    [SerializeField] private HealthBar HealthBar;
-
     private float _health;
-    public Camera Camera;
     private Material _material;
     private AudioManager _audioManager;
 

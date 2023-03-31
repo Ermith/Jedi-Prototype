@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class ExplodingEnemy : MonoBehaviour
 {
+    [SerializeField, Tooltip("The target they respond to.")]
     public Transform target;
+
+    [SerializeField, Tooltip("Speed at which the enemy moves to the target.")]
     public float MoveSpeed = 1;
+
+    [SerializeField, Tooltip("How close does target have to be for them to start exploding?")]
     public float ExplosionTriggerRange = 1.5f;
+
+    [SerializeField, Tooltip("How big the explosion?")]
     public float ExplosionRadius = 5;
+
+    [SerializeField, Tooltip("How much damage the explosion?")]
     public float ExplosionDamage = 100;
+
+    [SerializeField, Tooltip("How close the target has to be for the enemy to start moving?")]
     public float AggretionRadius = 10f;
+
+    [SerializeField, Tooltip("The visual of the explosion.")]
     public ParticleSystem Explosion;
 
 

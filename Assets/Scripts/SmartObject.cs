@@ -38,7 +38,7 @@ public class TweenWrapper
 
 public class SmartObject : MonoBehaviour
 {
-    [ActionType]
+    [ActionType, Tooltip("What do you want to happen on activating this object?")]
     public TweenWrapper wrapper;
 
     private AudioManager _audioManager;

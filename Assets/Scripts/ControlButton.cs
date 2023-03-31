@@ -8,8 +8,12 @@ using static UnityEngine.InputSystem.InputActionRebindingExtensions;
 
 public class ControlButton : MonoBehaviour
 {
+    [SerializeField, Tooltip("Action the button is bind ti. e.g. Attack")]
     public InputActionReference actionReference;
+
+    [SerializeField, Tooltip("Binding number in the action. Depends on the action. Like movement - forward = 0, left = 1 ...")]
     public int BindingIndex = 0;
+
     private TMP_Text _label;
     private UIButton _button;
 

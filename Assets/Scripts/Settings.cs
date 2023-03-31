@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
-    public static float SFXVolume = 1.0f;
-    public static float MusicVolume = 1.0f;
-    public static float MouseSensitivity = 1.0f;
+    [HideInInspector] public static float SFXVolume = 1.0f;
+    [HideInInspector] public static float MusicVolume = 1.0f;
+    [HideInInspector] public static float MouseSensitivity = 1.0f;
 
     private static (int, int)[] Resolutions = { (1920, 1080), (1280, 720), (800, 600) };
 

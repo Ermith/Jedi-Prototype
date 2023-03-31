@@ -6,14 +6,31 @@ using DG.Tweening;
 
 public class RangedEnemy : MonoBehaviour
 {
+    [SerializeField, Tooltip("Type of projectile to be shot.")]
     public GameObject _projectile;
+
+    [SerializeField, Tooltip("End of the weapon where to shoot from.")]
     public GameObject _muzzle;
+
+    [SerializeField, Tooltip("What to shoot?")]
     public CharacterController _target;
+
+    [SerializeField, Tooltip("Time between starting to charge the shots.")]
     public float ReloadTime = 2f;
+
+    [SerializeField, Tooltip("Charge the shot then fire.")]
     public float ChargeTime = 500f;
+
+    [SerializeField, Tooltip("How fast the projectile goes zoom zoom?")]
     public float ProjectileSpeed = 10f;
+
+    [SerializeField, Tooltip("How close the target has to be to start shooting?")]
     public float Range = 1000;
+
+    [SerializeField, Tooltip("How fast the aiming tracks the target.")]
     public float TurnRate = 0.8f;
+
+    [SerializeField, Tooltip("How much damage does the projectile deal?")]
     public float Damage = 10f;
 
     private Color _projectileColor;
